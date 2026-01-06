@@ -80,4 +80,9 @@ function celebrateWin() {
     setTimeout(() => confetti.remove(), 2000);
   }
 }
- 
+ setTimeout(() => {
+  if (document.querySelectorAll(".matched").length === document.querySelectorAll(".card").length) {
+    celebrateWin();
+  }
+}, 300);
+
