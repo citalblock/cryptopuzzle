@@ -59,3 +59,4 @@ function handleClick(div, card) {
 }
 
 startGame();
+
