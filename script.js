@@ -1,8 +1,8 @@
 const pairs = {
-  Apple: "Fruit",
-  Dog: "Animal",
-  Car: "Vehicle",
-  Sun: "Star"
+  Bitcoin: "BTC",
+  Citalblock: "CB",
+  Binance: "BNB",
+  Litecoin: "LTC"
 };
 
 let selected = [];
