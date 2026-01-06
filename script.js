@@ -35,7 +35,8 @@ function selectCard(div, item) {
   if (selected.length === 2 || div.classList.contains("matched")) return;
 
   selected.push({ div, item });
-  div.style.background = "#ddd";
+ div.classList.add("active");
+
 
   if (selected.length === 2) {
     if (
@@ -45,7 +46,7 @@ function selectCard(div, item) {
       selected.forEach(s => s.div.classList.add("matched"));
     } else {
       setTimeout(() => {
-        selected.forEach(s => (s.div.style.background = "white"));
+        selected.forEach(s => s.div.classList.remove("active"));
       }, 700);
     }
     selected = [];
