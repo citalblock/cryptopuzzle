@@ -1,0 +1,47 @@
+import { useRouter } from 'next/router';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
+import GameCard from '../../components/GameCard';
+import { games } from '../../data/games';
+
+export default function GameDetails() {
+  const router = useRouter();
+  const { id } = router.query;
+  const game = games.find(g => g.id === parseInt(id));
+  const relatedGames = games.filter(g => game.related.includes(g.id));
+
+  if (!game) return <div>Loading...</div>;
+
+  return (
+    <div className="min-h-screen bg-slate-900 text-white">
+      <Header />
+      <main className="pt-20 px-4">
+        <button
+          onClick={() => router.back()}
+          className="mb-4 bg-blue-900 hover:bg-blue-700 px-4 py-2 rounded"
+        >
+          Back to Games
+        </button>
+        <h2 className="text-3xl font-bold mb-4 text-green-400">{game.title}</h2>
+        <p className="mb-8">{game.description} – Dive deep into crypto education!</p>
+        <iframe
+          src={game.iframeUrl}
+          className="w-full h-96 mb-8 rounded-lg"
+          title={game.title}
+          sandbox="allow-scripts allow-same-origin"
+        ></iframe>
+        {relatedGames.length > 0 && (
+          <div>
+            <h3 className="text-2xl font-semibold mb-4 text-green-400">Related Games</h3>
+            <div className="grid md:grid-cols-2 gap-4">
+              {relatedGames.map(relGame => (
+                <GameCard key={relGame.id} game={relGame} />
+              ))}
+            </div>
+          </div>
+        )}
+      </main>
+      <Footer />
+    </div>
+  );
+}
