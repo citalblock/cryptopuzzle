@@ -1,0 +1,19 @@
+crypto-play-website/
+├── package.json
+├── tailwind.config.js
+├── next.config.js
+├── pages/
+│   ├── _app.js
+│   ├── index.js (Homepage)
+│   ├── games.js (Games Page)
+│   └── games/[id].js (Game Details Page)
+├── components/
+│   ├── Header.js
+│   ├── Footer.js
+│   └── GameCard.js
+├── data/
+│   └── games.js (Dummy game data)
+├── public/
+│   └── (add images like logos if needed)
+└── styles/
+    └── globals.css

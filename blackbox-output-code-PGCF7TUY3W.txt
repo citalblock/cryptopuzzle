@@ -1,0 +1,36 @@
+import { useState } from 'react';
+import Link from 'next/link';
+
+const games = [
+  { id: 1, title: 'Bitcoin Basics', desc: 'Learn mining and wallets.', iframe: 'https://example.com/game1' },
+  // Add more games
+];
+
+export default function Games() {
+  const [search, setSearch] = useState('');
+  const filteredGames = games.filter(g => g.title.toLowerCase().includes(search.toLowerCase()));
+
+  return (
+    <div className="min-h-screen bg-slate-900 text-white p-4">
+      <h2 className="text-3xl font-bold mb-8 text-center text-green-400">Available Crypto Games</h2>
+      <input
+        type="text"
+        placeholder="Search games..."
+        className="w-full mb-8 p-3 bg-slate-800 rounded-lg"
+        onChange={(e) => setSearch(e.target.value)}
+      />
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {filteredGames.map(game => (
+          <div key={game.id} className="bg-slate-800 p-4 rounded-lg shadow-lg">
+            <h3 className="text-xl font-semibold mb-2">{game.title}</h3>
+            <p className="mb-4">{game.desc}</p>
+            <iframe src={game.iframe} className="w-full h-48 mb-4 rounded" title={game.title}></iframe>
+            <Link href={`/games/${game.id}`}>
+              <button className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded">Play Now</button>
+            </Link>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}

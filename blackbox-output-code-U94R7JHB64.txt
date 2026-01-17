@@ -1,0 +1,21 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {
+      colors: {
+        'blue-900': '#1e3a8a', // Match your site's dark blue
+        'green-400': '#10b981', // Match your site's green accent
+        'slate-900': '#0f172a', // Dark background
+        'slate-800': '#1e293b', // Card backgrounds
+      },
+      fontFamily: {
+        'inter': ['Inter', 'sans-serif'], // Match your site's font
+      },
+    },
+  },
+  plugins: [],
+}

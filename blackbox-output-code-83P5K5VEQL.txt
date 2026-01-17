@@ -1,0 +1,30 @@
+// Dummy game data. Replace with real Educaplay crypto-themed games.
+// Educaplay embed URLs look like: https://www.educaplay.com/game/embed/[id]
+// Ensure games are public and embeddable.
+export const games = [
+  {
+    id: 1,
+    title: 'Bitcoin Basics Quiz',
+    description: 'Test your knowledge on Bitcoin mining, wallets, and transactions. Perfect for beginners!',
+    iframeUrl: 'https://www.educaplay.com/game/embed/12345', // Replace with real crypto game ID
+    tags: ['Bitcoin', 'Wallets'],
+    related: [2, 3],
+  },
+  {
+    id: 2,
+    title: 'DeFi Trading Simulator',
+    description: 'Simulate decentralized finance trades and learn about liquidity pools.',
+    iframeUrl: 'https://www.educaplay.com/game/embed/67890', // Replace with real crypto game ID
+    tags: ['DeFi', 'Trading'],
+    related: [1, 3],
+  },
+  {
+    id: 3,
+    title: 'NFT Marketplace Challenge',
+    description: 'Explore NFT creation and trading in a fun, educational game.',
+    iframeUrl: 'https://www.educaplay.com/game/embed/11223', // Replace with real crypto game ID
+    tags: ['NFTs', 'Marketplace'],
+    related: [1, 2],
+  },
+  // Add more games as needed
+];

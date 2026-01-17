@@ -1,0 +1,48 @@
+import Link from 'next/link';
+
+export default function Home() {
+  return (
+    <div className="min-h-screen bg-slate-900 text-white font-inter">
+      {/* Header */}
+      <header className="bg-blue-900 p-4 shadow-lg">
+        <nav className="flex justify-between items-center max-w-7xl mx-auto">
+          <h1 className="text-2xl font-bold text-green-400">CryptoPlay</h1>
+          <ul className="flex space-x-6">
+            <li><Link href="/games" className="hover:text-green-400">Games</Link></li>
+            <li><Link href="#benefits" className="hover:text-green-400">Benefits</Link></li>
+            <li><Link href="#testimonials" className="hover:text-green-400">Testimonials</Link></li>
+            <li><Link href="#about" className="hover:text-green-400">About</Link></li>
+          </ul>
+        </nav>
+      </header>
+
+      {/* Hero Section */}
+      <section className="bg-gradient-to-r from-blue-900 to-slate-800 py-20 px-4">
+        <div className="max-w-7xl mx-auto text-center">
+          <h2 className="text-5xl font-bold mb-4">Learn Crypto Through Interactive Games</h2>
+          <p className="text-xl mb-8">Explore embedded games on blockchain, DeFi, and more. No creation needed—just play and educate!</p>
+          <Link href="/games">
+            <button className="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-lg font-semibold">Explore Games</button>
+          </Link>
+        </div>
+      </section>
+
+      {/* Benefits Section */}
+      <section id="benefits" className="py-16 px-4 bg-slate-800">
+        <div className="max-w-7xl mx-auto">
+          <h3 className="text-3xl font-bold mb-8 text-center text-green-400">Why Crypto Education Matters</h3>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="text-center">
+              <div className="text-6xl mb-4">🔗</div>
+              <h4 className="text-xl font-semibold">Understand Blockchain</h4>
+              <p>Games teach decentralized tech in an engaging way.</p>
+            </div>
+            {/* Add more cards for DeFi, Security, etc. */}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials and About sections similarly */}
+    </div>
+  );
+}

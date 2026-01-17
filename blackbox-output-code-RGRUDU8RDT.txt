@@ -1,0 +1,21 @@
+import Link from 'next/link';
+
+export default function GameCard({ game }) {
+  return (
+    <div className="bg-slate-800 p-4 rounded-lg shadow-lg hover:shadow-xl transition">
+      <h3 className="text-xl font-semibold mb-2 text-green-400">{game.title}</h3>
+      <p className="mb-4 text-sm">{game.description}</p>
+      <iframe
+        src={game.iframeUrl}
+        className="w-full h-48 mb-4 rounded"
+        title={game.title}
+        sandbox="allow-scripts allow-same-origin"
+      ></iframe>
+      <Link href={`/games/${game.id}`}>
+        <button className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded w-full">
+          Play Now
+        </button>
+      </Link>
+    </div>
+  );
+}

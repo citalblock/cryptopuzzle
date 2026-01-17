@@ -1,0 +1,18 @@
+import { useRouter } from 'next/router';
+
+const gameData = { /* Fetch or hardcode based on ID */ };
+
+export default function GameDetails() {
+  const router = useRouter();
+  const { id } = router.query;
+
+  return (
+    <div className="min-h-screen bg-slate-900 text-white p-4">
+      <button onClick={() => router.back()} className="mb-4 bg-blue-900 px-4 py-2 rounded">Back to Games</button>
+      <h2 className="text-3xl font-bold mb-4 text-green-400">{gameData.title}</h2>
+      <p className="mb-8">{gameData.desc} – Educate yourself on crypto fundamentals!</p>
+      <iframe src={gameData.iframe} className="w-full h-96 rounded-lg" title={gameData.title}></iframe>
+      {/* Related games section */}
+    </div>
+  );
+}
