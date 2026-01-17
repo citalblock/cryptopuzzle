@@ -1,0 +1,73 @@
+import Link from 'next/link';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+
+export default function Home() {
+  return (
+    <div className="min-h-screen bg-slate-900 text-white">
+      <Header />
+      <main className="pt-20">
+        {/* Hero Section */}
+        <section className="bg-gradient-to-r from-blue-900 to-slate-800 py-20 px-4">
+          <div className="max-w-7xl mx-auto text-center">
+            <h2 className="text-5xl font-bold mb-4">Master Crypto Through Interactive Games</h2>
+            <p className="text-xl mb-8">Browse and play embedded crypto educational games from Educaplay. Learn blockchain, DeFi, and more—no creation required!</p>
+            <Link href="/games">
+              <button className="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-lg font-semibold">
+                Explore Games
+              </button>
+            </Link>
+          </div>
+        </section>
+
+        {/* Benefits Section */}
+        <section id="benefits" className="py-16 px-4 bg-slate-800">
+          <div className="max-w-7xl mx-auto">
+            <h3 className="text-3xl font-bold mb-8 text-center text-green-400">Why Learn Crypto with Games?</h3>
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="text-center">
+                <div className="text-6xl mb-4">🔗</div>
+                <h4 className="text-xl font-semibold">Understand Blockchain</h4>
+                <p>Interactive games demystify decentralized technology and smart contracts.</p>
+              </div>
+              <div className="text-center">
+                <div className="text-6xl mb-4">💰</div>
+                <h4 className="text-xl font-semibold">Master DeFi & Trading</h4>
+                <p>Simulate trades and learn about risks in a safe, fun environment.</p>
+              </div>
+              <div className="text-center">
+                <div className="text-6xl mb-4">🖼️</div>
+                <h4 className="text-xl font-semibold">Explore NFTs</h4>
+                <p>Discover digital assets and marketplaces through engaging challenges.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Testimonials Section */}
+        <section id="testimonials" className="py-16 px-4">
+          <div className="max-w-7xl mx-auto">
+            <h3 className="text-3xl font-bold mb-8 text-center text-green-400">What Users Say</h3>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="bg-slate-800 p-6 rounded-lg">
+                <p>"These games made crypto fun and easy to understand!" – Alex T.</p>
+              </div>
+              <div className="bg-slate-800 p-6 rounded-lg">
+                <p>"Learned DeFi basics without the stress." – Jamie R.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* About Section */}
+        <section id="about" className="py-16 px-4 bg-slate-800">
+          <div className="max-w-7xl mx-auto text-center">
+            <h3 className="text-3xl font-bold mb-4 text-green-400">About CryptoPlay</h3>
+            <p>We provide a platform for crypto education through embedded games from Educaplay. Focus on learning, not creating—empower yourself in the world of digital finance.</p>
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </div>
+  );
+}
